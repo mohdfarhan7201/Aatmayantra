@@ -1,33 +1,3 @@
-// import React from "react";
-
-// import { Routes, Route } from "react-router-dom";
-// import Header from "./Header";
-// import Upload from "./Uploaded/uploaded"
-// import { useTheme } from "../../context/ThemeContext"; 
-
-// export default function AddManager() {
-//   const { darkMode } = useTheme(); // 🔹 get darkMode state
-
-//   return (
-//     <div
-//       className={`p-6 min-h-screen transition-colors duration-300 ${
-//         darkMode ? "bg-[#191F36] text-white" : "bg-white text-black"
-//       }`}
-//     >
-//       <Header />
-//       <Routes>
-
-// {/* <Upload/> */}     
-//         <Route path="/" element={<Upload/> } />
-
-//       </Routes>
-//     </div>
-//   );
-// }
-
-
-
-
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./Header";

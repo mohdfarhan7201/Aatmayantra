@@ -90,6 +90,7 @@ import Sidebar from "./components/Sidebar";
 import Dashboard from "./components/Dashboard1/Dashboard";
 import Profile from "./components/Profile";
 import AddManager from "./components/AddManeger/AddManeger";
+import Shedule from "./components/Shedule/shedule";
 import Setting from "./components/Settings/Setting";
 
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
@@ -108,8 +109,9 @@ function Layout() {
       <main className="flex-1 overflow-auto ml-64">
         <Routes>
           <Route index element={<Dashboard />} />
-          <Route path="profile" element={<Profile />} />
+          <Route path="trainer/profile" element={<Profile />} />
           <Route path="session/*" element={<AddManager />} />
+          <Route path="shedule/*" element={<Shedule/>} />
           <Route path="setting" element={<Setting />} />
         </Routes>
       </main>
