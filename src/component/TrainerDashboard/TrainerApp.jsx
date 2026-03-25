@@ -91,6 +91,7 @@ import Dashboard from "./components/Dashboard1/Dashboard";
 import Profile from "./components/Profile";
 import AddManager from "./components/AddManeger/AddManeger";
 import Shedule from "./components/Shedule/shedule";
+import Attendance from "./components/Attendance/attendance";
 import Setting from "./components/Settings/Setting";
 
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
@@ -112,6 +113,7 @@ function Layout() {
           <Route path="trainer/profile" element={<Profile />} />
           <Route path="session/*" element={<AddManager />} />
           <Route path="shedule/*" element={<Shedule/>} />
+          <Route path="attendance/*" element={<Attendance/>} />
           <Route path="setting" element={<Setting />} />
         </Routes>
       </main>
