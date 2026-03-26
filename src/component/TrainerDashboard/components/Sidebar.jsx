@@ -259,7 +259,7 @@ const navigationItems = [
   { id: "dashboard", label: "Dashboard", path: "", icon: Home }, // ✅ INDEX
   { id: "session", label: "Session", path: "session", icon: LiaChalkboardTeacherSolid },
   { id: "manage-classes", label: "Schedule", path: "shedule", icon: Grid3X3 },
-  { id: "instructor", label: "Attendance", path: "attendance", icon: GraduationCap },
+  { id: "attendance", label: "Attendance", path: "attendance", icon: GraduationCap },
   { id: "Permisions", label: "Members", path: "members", icon: BsPeopleFill },
   { id: "feedback", label: "Chat", path: "chat", icon: MessageSquare },
   { id: "report", label: "Report", path: "report", icon: FileText },

@@ -87,7 +87,7 @@ export default function MemberTable({ data }) {
   };
 
   const handleView = (member) => {
-    navigate(`/member/${member.id}`, { state: member }); // ✅ navigation
+    navigate(`member/${member.id}`, { state: member }); // ✅ navigation
   };
 
   return (
