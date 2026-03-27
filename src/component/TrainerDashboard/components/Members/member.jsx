@@ -3,6 +3,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./Header";
 import DashboardCards from "./cards";
+import MenberSummary from "../Dashboard1/MemberSummary/MemberSummary";
 
 import { useTheme } from "../../context/ThemeContext";
 
@@ -17,7 +18,8 @@ export default function Members() {
     >
       {/* HEADER */}
       <Header />
-       <DashboardCards />     
+       <DashboardCards />  
+       <MenberSummary/>   
     </div>
   );
 }

@@ -92,7 +92,7 @@ export default function UploadedTable() {
                 {/* Action */}
                 <td className="p-3">
                   <button
-                    onClick={() => navigate(`/session/view/${item.id}`)}
+                    onClick={() => navigate(`/trainer/session/view/${item.id}`)}
                     className="bg-purple-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-purple-700 transition"
                   >
                     View Report

@@ -43,7 +43,7 @@ export default function UploadedGrid() {
                 <span>{item.rating}</span>
 
               <button
-                onClick={() => navigate(`/session/view/${item.id}`)}
+                onClick={() => navigate(`/trainer/session/view/${item.id}`)}
                 className="w-1/2 text-sm font-medium border rounded-lg py-2 hover:bg-gray-50 ml-auto"
                 >
                 View Report

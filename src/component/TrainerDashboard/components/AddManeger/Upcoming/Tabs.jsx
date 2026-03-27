@@ -19,7 +19,7 @@ export default function Header() {
       
       {/* Upcoming */}
       <NavLink
-        to="/session"
+        to="/trainer/session"
         end   // ⭐⭐ IMPORTANT FIX
         className={({ isActive }) =>
           `${baseTabClass} ${
@@ -32,7 +32,7 @@ export default function Header() {
 
       {/* Uploaded */}
       <NavLink
-        to="/session/uploaded"
+        to="/trainer/session/uploaded"
         className={({ isActive }) =>
           `${baseTabClass} ${
             isActive ? activeTabClass : inactiveTabClass
@@ -44,7 +44,7 @@ export default function Header() {
 
       {/* Add New Session */}
       <button
-        onClick={() => navigate("/session/add")}
+        onClick={() => navigate("/trainer/session/add")}
         className="ml-auto bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition"
       >
         + Add New Session

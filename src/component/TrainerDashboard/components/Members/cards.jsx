@@ -25,7 +25,7 @@ export default function DashboardCards() {
   ];
 
   return (
-    <div className="flex gap-8">
+    <div className="flex gap-8 mb-8">
       {cards.map((card, index) => (
         <div
           key={index}

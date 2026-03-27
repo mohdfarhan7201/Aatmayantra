@@ -111,7 +111,7 @@ function Layout() {
       <main className="flex-1 overflow-auto ml-64">
         <Routes>
           <Route index element={<Dashboard />} />
-          <Route path="trainer/profile" element={<Profile />} />
+          <Route path="profile" element={<Profile />} />
           <Route path="session/*" element={<AddManager />} />
           <Route path="shedule/*" element={<Shedule/>} />
           <Route path="attendance/*" element={<Attendance/>} />
