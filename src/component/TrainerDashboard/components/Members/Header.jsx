@@ -64,7 +64,7 @@ const navigate = useNavigate();
       src="https://randomuser.me/api/portraits/women/68.jpg"
       alt="User avatar"
       className="w-10 h-10 rounded-full  cursor-pointer"
-      onClick={() => navigate("/profile")}
+      onClick={() => navigate("/trainer/members/profile")}
     />
         </div>
     </div>

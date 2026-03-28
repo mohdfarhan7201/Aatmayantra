@@ -40,19 +40,27 @@ import DashboardCards from "./cards";
 import Usetogether from "./Use Together/usetogether";
 import AttendanceSummary from "./AttendanceSummary/AttendanceSummary";
 import MemberDetails from "./AttendanceSummary/MemberDetails";
+import AttendanceProfile from "../Profile";
 import { useTheme } from "../../context/ThemeContext";
+import { useLocation } from "react-router-dom";
+
 
 export default function AddManager() {
   const { darkMode } = useTheme();
 
-  return (
+
+const location = useLocation();
+
+
+return (
     <div
-      className={`p-6 min-h-screen transition-colors duration-300 ${
+    className={`p-6 min-h-screen transition-colors duration-300 ${
         darkMode ? "bg-[#191F36] text-white" : "bg-white text-black"
-      }`}
+    }`}
     >
       {/* HEADER */}
-      <Header />
+      {/* <Header /> */}
+        {location.pathname !== "/trainer/attendance/profile" && <Header />}
 
       <Routes>
         {/* ✅ MAIN PAGE */}
@@ -71,6 +79,8 @@ export default function AddManager() {
         <Route
           path="member/:id"
           element={<MemberDetails />}
+        />
+        <Route path="profile"element={<AttendanceProfile />}
         />
       </Routes>
     </div>
