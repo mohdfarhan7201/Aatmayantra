@@ -22,11 +22,13 @@ return (
     >
       {/* HEADER */}
       {/* <Header /> */}
-        {location.pathname !== "triner/members/profile" && <Header />}
-       <DashboardCards />  
-       <MenberSummary/> 
+        {location.pathname !== "/trainer/members/profile" && <Header />}
+        {location.pathname !== "/trainer/members/profile" && <DashboardCards />}
+        {location.pathname !== "/trainer/members/profile" && <MenberSummary />}
+       {/* <DashboardCards />  
+       <MenberSummary/>  */}
        <Routes>
-        <Route path="/trainer/members/profile" element={<Profile/>}></Route>
+        <Route path="profile" element={<Profile/>}></Route>
         </Routes>  
     </div>
   );

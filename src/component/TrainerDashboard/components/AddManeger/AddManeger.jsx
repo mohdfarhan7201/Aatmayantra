@@ -1,13 +1,19 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./Header";
 import Upcoming from "./Upcoming/upcomings";
 import Upload from "./Uploaded/uploaded";
 import AddSession from "./AddNew/AddSession";
-import { useTheme } from "../../context/ThemeContext";
 import ViewReport from "./Uploaded/SessionReport";
+import Profile from "../Profile";
+import { useTheme } from "../../context/ThemeContext";
+
 export default function AddManager() {
   const { darkMode } = useTheme();
+  const location = useLocation();
+
+  // ✅ Check if current route is profile
+  const isProfilePage = location.pathname.endsWith("/profile");
 
   return (
     <div
@@ -15,19 +21,31 @@ export default function AddManager() {
         darkMode ? "bg-[#191F36] text-white" : "bg-white text-black"
       }`}
     >
-      <Header />
+      {/* ✅ Header hide on profile pages */}
+      {!isProfilePage && <Header />}
 
       <Routes>
-        {/* /session */}
+        {/* ✅ /trainer/session */}
         <Route index element={<Upcoming />} />
+        <Route path="profile" element={<Profile />} />
 
-        {/* /session/upload */}
-        <Route path="uploaded" element={<Upload />} />
+        {/* ✅ /trainer/session/uploaded */}
+        <Route path="uploaded">
+          <Route index element={<Upload />} />
+          <Route path="profile" element={<Profile />} />
+        </Route>
 
-        {/* /session/add */}
-        <Route path="add" element={<AddSession />} />
+        {/* ✅ /trainer/session/add */}
+        <Route path="add">
+          <Route index element={<AddSession />} />
+          <Route path="profile" element={<Profile />} />
+        </Route>
 
-        <Route path="view/:id" element={<ViewReport/>} />
+        {/* ✅ /trainer/session/view/:id */}
+        <Route path="view/:id">
+          <Route index element={<ViewReport />} />
+          <Route path="profile" element={<Profile />} />
+        </Route>
       </Routes>
     </div>
   );
