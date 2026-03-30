@@ -41,13 +41,20 @@ export default function MemberSummary() {
       <div className="flex justify-between items-center mb-2">
         <h2 className="text-2xl text-[#1D7464] font-bold">Member Summary</h2>
 
-        <div className="flex items-center gap-4">
-          <TopRightFilter rightFilter={rightFilter} setRightFilter={setRightFilter} />
-        </div>
       </div>
-      <div className="mb-2">
-          <ViewSwitcher view={view} setView={setView} />    {/* NEW */}
-      </div>
+      <div className="flex items-center justify-between mb-3">
+  
+  {/* Left side */}
+  <div>
+    <ViewSwitcher view={view} setView={setView} />
+  </div>
+
+  {/* Right side */}
+  <div className="flex items-center gap-4">
+    <TopRightFilter rightFilter={rightFilter} setRightFilter={setRightFilter} />
+  </div>
+
+</div>
 
       {/* Top Chips */}
       <FilterChips selected={selectedFilter} setSelected={setSelectedFilter} />

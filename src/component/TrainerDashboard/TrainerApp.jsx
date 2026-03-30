@@ -89,10 +89,11 @@ import { Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Dashboard from "./components/Dashboard1/Dashboard";
 import Profile from "./components/Profile";
-import AddManager from "./components/AddManeger/AddManeger";
+import Sessions from "./components/Sessions/Session";
 import Shedule from "./components/Shedule/shedule";
 import Attendance from "./components/Attendance/attendance";
 import Members from "./components/Members/member";
+
 import Setting from "./components/Settings/Setting";
 
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
@@ -112,9 +113,10 @@ function Layout() {
         <Routes>
           <Route index element={<Dashboard />} />
           <Route path="profile" element={<Profile />} />
-          <Route path="session/*" element={<AddManager />} />
+          <Route path="session/*" element={<Sessions />} />
           <Route path="shedule/*" element={<Shedule/>} />
           <Route path="attendance/*" element={<Attendance/>} />
+          <Route path="members/*" element={<Members/>} />
           <Route path="members/*" element={<Members/>} />
           <Route path="setting" element={<Setting />} />
         </Routes>
