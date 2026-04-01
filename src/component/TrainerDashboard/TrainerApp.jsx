@@ -93,7 +93,8 @@ import Sessions from "./components/Sessions/Session";
 import Shedule from "./components/Shedule/shedule";
 import Attendance from "./components/Attendance/attendance";
 import Members from "./components/Members/member";
-
+import Chat from "./components/Chats/chat";
+import Reports from "./components/Reports/Report";
 import Setting from "./components/Settings/Setting";
 
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
@@ -117,7 +118,8 @@ function Layout() {
           <Route path="shedule/*" element={<Shedule/>} />
           <Route path="attendance/*" element={<Attendance/>} />
           <Route path="members/*" element={<Members/>} />
-          <Route path="members/*" element={<Members/>} />
+          <Route path="chat/*" element={<Chat/>} />
+          <Route path="report/*" element={<Reports/>} />
           <Route path="setting" element={<Setting />} />
         </Routes>
       </main>

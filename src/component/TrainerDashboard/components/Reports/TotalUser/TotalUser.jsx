@@ -1,9 +1,10 @@
 import React from 'react'
-import FeedBackScore from "../../ManageClasses/LineChart";
+// import FeedBackScore from "../../ManageClasses/LineChart";
 function TotalUser() {
   return (
     <div>
-      <FeedBackScore/>
+      hello user
+      {/* <FeedBackScore/> */}
     </div>
   )
 }
