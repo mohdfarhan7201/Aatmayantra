@@ -1,80 +1,65 @@
-import React, { useState } from 'react';
-import { FaUser, FaFileAlt, FaClock, FaUserPlus } from 'react-icons/fa';
-import User from "./TotalUser/TotalUser";
-import Instructor from './Instructor/Instructor';
-import Manager from './Maneger/Manager';
-import Customer from './Customer/Customer';
-
-const cards = [
-  {
-    id: 1,
-    title: 'Total User',
-    icon: <FaUser size={22} />,
-    component: <User />,
-    gradient: 'from-blue-100 via-blue-50 to-white',
-  },
-  {
-    id: 2,
-    title: 'Instructor',
-    icon: <FaFileAlt size={22} />,
-    component: <Instructor />,
-    gradient: 'from-blue-100 via-blue-50 to-white',
-  },
-  {
-    id: 3,
-    title: 'Manager',
-    icon: <FaClock size={22} />,
-    component: <Manager />,
-    gradient: 'from-blue-100 via-blue-50 to-white',
-  },
-  {
-    id: 4,
-    title: 'Customer',
-    icon: <FaUserPlus size={22} />,
-    component: <Customer />,
-    gradient: 'from-blue-100 via-blue-50 to-white',
-  },
-];
+import React from "react";
+import { FaUser, FaUsers, FaTrophy, FaClipboardCheck } from "react-icons/fa";
 
 export default function DashboardCards() {
-  // Default active card = Existing Instructor (id:1)
-  const [activeCard, setActiveCard] = useState(1);
+  const cards = [
+    {
+      id: 1,
+      title: "Total Students",
+      value: 220,
+      icon: <FaUser />,
+      bg: "bg-gradient-to-r from-green-200 to-green-100",
+    },
+    {
+      id: 2,
+      title: "Active Students",
+      value: 34,
+      icon: <FaUsers />,
+      bg: "bg-gray-100",
+    },
+    {
+      id: 3,
+      title: "Completed Sessions",
+      value: 23,
+      icon: <FaTrophy />,
+      bg: "bg-gray-100",
+    },
+    {
+      id: 4,
+      title: "Average Attendance",
+      value: "78%",
+      icon: <FaClipboardCheck />,
+      bg: "bg-gray-100",
+    },
+  ];
 
   return (
-    <div className="mx-auto px-4 py-6 -mt-5">
-      {/* Cards */}
+    <div className="px-4 py-4">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {cards.map((c) => (
-          <button
-            key={c.id}
-            onClick={() => setActiveCard(c.id)}
-            className={`group block rounded-lg border border-gray-200 shadow-sm hover:shadow-lg transition duration-200 ease-in-out ${
-              activeCard === c.id ? `bg-gradient-to-br ${c.gradient}` : 'bg-white'
-            }`}
+        {cards.map((card) => (
+          <div
+            key={card.id}
+            className={`rounded-xl border border-gray-200 p-4 flex flex-col items-center justify-center shadow-sm transition-all duration-300 hover:shadow-md hover:scale-[1.03] ${card.bg}`}
           >
-            <div className="p-4 flex flex-col items-center">
-              <div
-                className={`w-16 h-16 rounded-xl mb-3 flex items-center justify-center ${
-                  activeCard === c.id
-                    ? `bg-gradient-to-br ${c.gradient}`
-                    : 'bg-gradient-to-br from-gray-50 to-white'
-                }`}
-                style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.6)' }}
-              >
-                <div className="text-blue-600 group-hover:scale-105 transition-transform duration-200">
-                  {c.icon}
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-sm font-medium text-gray-700">{c.title}</div>
+            {/* Icon */}
+            <div className="w-12 h-12 flex items-center justify-center rounded-full bg-white mb-2 shadow-sm">
+              <div className="text-blue-500 text-xl">
+                {card.icon}
               </div>
             </div>
-          </button>
+
+            {/* Title */}
+            <p className="text-sm text-gray-600 text-center">
+              {card.title}
+            </p>
+
+            {/* Value */}
+            <p className="text-lg font-semibold text-green-600">
+              {card.value}
+            </p>
+          </div>
         ))}
       </div>
-
-      {/* Selected component renders here */}
-      <div>{cards.find((c) => c.id === activeCard)?.component}</div>
     </div>
   );
 }
