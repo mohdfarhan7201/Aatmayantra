@@ -1,83 +1,54 @@
-import React, { useState } from 'react';
-import { FaUser, FaFileAlt, FaClock, FaUserPlus } from 'react-icons/fa';
-import { MdOutlinePayments , MdManageAccounts } from "react-icons/md";
-import { AiOutlineTransaction } from "react-icons/ai";
-import { TbReportMoney } from "react-icons/tb";
-import User from "./PaymentGateway/PaymentGateway";
-import Instructor from './TransectionHistory/Transection';
-import Manager from './MyAccount/Account';
-import Customer from './Reports/Reports';
+import React from "react";
 
-const cards = [
-  {
-    id: 1,
-    title: 'Payment Gateway',
-    icon: <MdOutlinePayments size={28} />,
-    component: <User />,
-    gradient: 'from-blue-100 via-blue-50 to-white',
-  },
-  {
-    id: 2,
-    title: 'Transaction History',
-    icon: <AiOutlineTransaction size={28} />,
-    component: <Instructor />,
-    gradient: 'from-blue-100 via-blue-50 to-white',
-  },
-  {
-    id: 3,
-    title: 'My Account',
-    icon: <MdManageAccounts size={30} />,
-    component: <Manager />,
-    gradient: 'from-blue-100 via-blue-50 to-white',
-  },
-  {
-    id: 4,
-    title: 'Report',
-    icon: <TbReportMoney size={28} />,
-    component: <Customer />,
-    gradient: 'from-blue-100 via-blue-50 to-white',
-  },
-];
-
-export default function DashboardCards() {
-  // Default active card = Existing Instructor (id:1)
-  const [activeCard, setActiveCard] = useState(1);
-
+export default function EarningCards() {
   return (
-    <div className="mx-auto px-4 py-6 -mt-5">
-      {/* Cards */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {cards.map((c) => (
-          <button
-            key={c.id}
-            onClick={() => setActiveCard(c.id)}
-            className={`group block rounded-lg border border-gray-200 shadow-sm hover:shadow-lg transition duration-200 ease-in-out ${
-              activeCard === c.id ? `bg-gradient-to-br ${c.gradient}` : 'bg-white'
-            }`}
-          >
-            <div className="p-4 flex flex-col items-center">
-              <div
-                className={`w-16 h-16 rounded-xl mb-3 flex items-center justify-center ${
-                  activeCard === c.id
-                    ? `bg-gradient-to-br ${c.gradient}`
-                    : 'bg-gradient-to-br from-gray-50 to-white'
-                }`}
-                style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.6)' }}
-              >
-                <div className="text-blue-600 group-hover:scale-105 transition-transform duration-200">
-                  {c.icon}
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-sm font-medium text-gray-700">{c.title}</div>
-              </div>
-            </div>
-          </button>
-        ))}
+    <div className="flex gap-5 justify-center mt-5">
+
+      {/* CARD 1 */}
+      <div className="w-[340px] rounded-xl p-4 border border-gray-200 shadow-sm bg-[#E6F4EA]">
+        <p className="text-[23px] text-green-700 font-medium">
+          Total Earning
+        </p>
+
+        <h2 className="text-[25px] font-semibold text-gray-800 mt-1">
+          ₹ 45,000
+        </h2>
+
+        <p className="text-[15px] text-gray-500 mt-1">
+          From Atmayantra
+        </p>
       </div>
 
-      {/* Selected component renders here */}
-      <div>{cards.find((c) => c.id === activeCard)?.component}</div>
+      {/* CARD 2 */}
+      <div className="w-[340px] rounded-xl p-4 border border-gray-200 shadow-sm bg-[#F5E8D6]">
+        <p className="text-[23px] text-yellow-700 font-medium">
+          Available Balance
+        </p>
+
+        <h2 className="text-[25px] font-semibold text-gray-800 mt-1">
+          ₹ 25,000
+        </h2>
+
+        <p className="text-[15px] text-gray-500 mt-1">
+          Ready for withdrawal
+        </p>
+      </div>
+
+      {/* CARD 3 */}
+      <div className="w-[340px] rounded-xl p-4 border border-gray-200 shadow-sm bg-[#F8E3E3]">
+        <p className="text-[23px] text-red-600 font-medium">
+          Pending Payout
+        </p>
+
+        <h2 className="text-[25px] font-semibold text-gray-800 mt-1">
+          ₹ 4,000
+        </h2>
+
+        <p className="text-[15px] text-gray-500 mt-1">
+          Processing
+        </p>
+      </div>
+
     </div>
   );
-}
+} 

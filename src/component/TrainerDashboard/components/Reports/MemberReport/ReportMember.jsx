@@ -5,15 +5,17 @@ import ViewModal from "./ViewModal";
 import FilterBar from "./FilterBar";
 
 export default function MemberReport() {
-  const [openModal, setOpenModal] = useState(false);
+  const [selectedMember, setSelectedMember] = useState(null); // 🔥 IMPORTANT
   const [filter, setFilter] = useState("all");
   const [page, setPage] = useState(1);
 
   const itemsPerPage = 5;
 
-  // 🔥 MORE DATA (pagination test)
+  // 🔥 MORE REALISTIC DATA
   const members = Array.from({ length: 20 }, (_, i) => ({
+    id: i + 1,
     name: `Member ${i + 1}`,
+    course: i % 2 === 0 ? "Yoga Basics" : "Meditation",
     session: `${Math.floor(Math.random() * 10)}/10`,
     completion: Math.floor(Math.random() * 100),
     status: Math.random() > 0.5 ? "Active" : "Inactive",
@@ -25,7 +27,12 @@ export default function MemberReport() {
       ? members
       : members.filter((m) => m.status === filter);
 
-  // 🔥 PAGINATION LOGIC
+  // 🔥 RESET PAGE ON FILTER CHANGE
+  React.useEffect(() => {
+    setPage(1);
+  }, [filter]);
+
+  // 🔥 PAGINATION
   const totalPages = Math.ceil(filteredMembers.length / itemsPerPage);
 
   const startIndex = (page - 1) * itemsPerPage;
@@ -35,8 +42,8 @@ export default function MemberReport() {
   );
 
   return (
-    <div className="bg-white rounded-xl border border-gray-300 p-5 shadow-sm ml-5 mr-5 ">
-      
+    <div className="bg-white rounded-xl border border-gray-300 p-5 shadow-sm mx-5">
+
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
         <h2 className="font-semibold text-lg text-gray-700">
@@ -49,7 +56,7 @@ export default function MemberReport() {
       {/* Table */}
       <MemberTable
         members={paginatedMembers}
-        onView={() => setOpenModal(true)}
+        onView={(member) => setSelectedMember(member)} // 🔥 FIX
       />
 
       {/* Pagination */}
@@ -60,7 +67,13 @@ export default function MemberReport() {
       />
 
       {/* Modal */}
-      {openModal && <ViewModal onClose={() => setOpenModal(false)} />}
+      {selectedMember && (
+        <ViewModal
+          member={selectedMember} // 🔥 DATA PASS
+          onClose={() => setSelectedMember(null)}
+        />
+      )}
+
     </div>
   );
 }
