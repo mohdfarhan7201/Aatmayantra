@@ -97,6 +97,7 @@ import Chat from "./components/Chats/chat";
 import Reports from "./components/Reports/Report";
 import Setting from "./components/Settings/Setting";
 import Payment from "./components/Payments/Payment";
+import Logout from "./components/LOGIN/LogoutConfirm";
 
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
 
@@ -122,7 +123,9 @@ function Layout() {
           <Route path="chat/*" element={<Chat/>} />
           <Route path="report/*" element={<Reports/>} />
           <Route path="payment/*" element={<Payment/>} />
-          <Route path="setting" element={<Setting />} />
+          <Route path="setting/*" element={<Setting />} />
+          <Route path="logout" element={<Logout />} />
+
         </Routes>
       </main>
     </div>

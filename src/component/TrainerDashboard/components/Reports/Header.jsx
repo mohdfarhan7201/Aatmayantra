@@ -1,7 +1,7 @@
 // src/components/Header.jsx
 import React from "react";
 import { FaSearch, FaBell } from "react-icons/fa";
-import { LiaChalkboardTeacherSolid } from "react-icons/lia";
+import { FileText , Settings } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 import { useTheme } from "../../context/ThemeContext"; // 🔹 import theme hook
@@ -12,7 +12,7 @@ const navigate = useNavigate();
 
   return (
     <div
-      className={`rounded-4xl p-5 mb-6 shadow flex justify-between items-center transition-colors duration-300 ${
+      className={`rounded-4xl p-5 mb-2 shadow flex justify-between items-center transition-colors duration-300 ${
         darkMode ? "bg-[#1E293B] text-white" : "bg-[#E1F7F5] text-black"
       }`}
     >
@@ -23,9 +23,9 @@ const navigate = useNavigate();
   }`}
 >
   <div className="text-4xl">
-  <LiaChalkboardTeacherSolid />
+  <FileText />
   </div>
-  <span className="mb-2">Chat</span>
+  <span className="mb-2">Report</span>
 </div>
 
       {/* Search Bar */}
@@ -52,21 +52,29 @@ const navigate = useNavigate();
 
 
 <div className="items-end justify-center flex gap-10">
-      {/* Notification Icon */}
-      <FaBell
-        className={`text-xl cursor-pointer mb-2 transition-colors duration-300 ${
-          darkMode ? "text-gray-300" : "text-gray-600"
-        }`}
-      />
+  {/* Notification Icon */}
+  <FaBell
+    className={`text-xl cursor-pointer mb-2 transition-colors duration-300 ${
+      darkMode ? "text-gray-300" : "text-gray-600"
+    }`}
+  />
 
-      {/* User Avatar */}
-      <img
-      src="https://randomuser.me/api/portraits/women/68.jpg"
-      alt="User avatar"
-      className="w-10 h-10 rounded-full  cursor-pointer"
-      onClick={() => navigate("profile")}
-    />
-        </div>
+  {/* Settings Icon */}
+  <Settings
+    className={`text-xl cursor-pointer mb-2 transition-colors duration-300 ${
+      darkMode ? "text-gray-300" : "text-gray-600"
+    }`}
+    onClick={() => navigate("/trainer/setting")}
+  />
+
+  {/* User Avatar */}
+  <img
+    src="https://randomuser.me/api/portraits/women/68.jpg"
+    alt="User avatar"
+    className="w-10 h-10 rounded-full cursor-pointer"
+    onClick={() => navigate("profile")}
+  />
+</div>
     </div>
   );
 }

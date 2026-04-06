@@ -15,7 +15,7 @@ export default function ProgressTracker() {
   };
 
   return (
-    <div className="bg-white border rounded-xl p-4 shadow-sm w-full h-65">
+    <div className="bg-white border border-gray-300 rounded-xl p-4 shadow-sm w-full h-65">
       <h3 className="text-2xl font-bold text-gray-700 mb-3">
         Progress Tracker
       </h3>

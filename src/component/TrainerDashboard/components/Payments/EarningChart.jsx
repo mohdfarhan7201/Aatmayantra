@@ -36,7 +36,7 @@ export default function EarningChart() {
   const data = type === "monthly" ? monthlyData : yearlyData;
 
   return (
-    <div className="bg-white rounded-xl border border-gray-300 p-4 shadow-sm w-[95%] justify-center ml-7 mt-5">
+    <div className="bg-white rounded-xl border border-gray-300 p-4 shadow-sm justify-center mt-5">
 
       {/* HEADER */}
       <div className="flex justify-between items-center mb-4">

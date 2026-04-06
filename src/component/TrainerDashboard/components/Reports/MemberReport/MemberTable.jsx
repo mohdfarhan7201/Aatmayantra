@@ -31,7 +31,7 @@ export default function MemberTable({ members, onView }) {
     <div className="w-full">
 
       {/* Header Row */}
-      <div className="flex items-center text-mb text-gray-500 px-4 py-2 border-b">
+      <div className="flex items-center text-mb text-gray-900 font-semibold px-4 py-2 border-b">
 
         <div className="w-[25%]">Member’s Name</div>
         <div className="w-[15%]">Course</div>

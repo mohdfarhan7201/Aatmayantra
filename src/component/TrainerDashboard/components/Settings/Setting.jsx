@@ -1,5 +1,6 @@
 // src/pages/AdminSettings.jsx
 import React, { useState, useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./Header";
 import AccountProfile from "./AccountProfile";
 import PrivacySecurity from "./PrivacySecurity";
@@ -9,8 +10,13 @@ import ReportsAnalytics from "./ReportsAnalytics";
 import AdminControl from "./AdminControl";
 import SystemControl from "./SystemControl";
 import HelpSection from "./HelpSection";
+import Profile from "../Profile";
 
 export default function AdminSettings() {
+
+  const location = useLocation();
+  const isProfilePage = location.pathname.includes("profile");
+
   const [darkMode, setDarkMode] = useState(false);
   const [notifications, setNotifications] = useState({
     email: false,
@@ -33,34 +39,45 @@ export default function AdminSettings() {
   }, [darkMode]);
 
   return (
-    <>
-      <Header />
-      <div className='min-h-screen transition-colors grid grid-cols-1 md:grid-cols-2 gap-6 p-6'>
-        {/* Left Section */}
-        <div className="flex flex-col gap-6">
-          <AccountProfile darkMode={darkMode} />
-          <PrivacySecurity darkmode={darkMode} />
-          <HelpSection darkMode={darkMode} />
-          <SystemControl darkMode={darkMode} />
-        </div>
+    <div className={`p-6 min-h-screen transition-colors duration-300 ${
+      darkMode ? "bg-[#191F36] text-white" : "bg-white text-black"
+    }`}>
 
-        {/* Right Section */}
-        <div className="flex flex-col gap-6">
-          <NotificationSettings
-          darkmode={darkMode}
-            notifications={notifications}
-            setNotifications={setNotifications}
-          />
-          <ThemeDisplay
-            darkMode={darkMode}
-            setDarkMode={setDarkMode}
-            language={language}
-            setLanguage={setLanguage}
-          />
-          <ReportsAnalytics darkMode={darkMode} />
-          <AdminControl darkMode={darkMode} />
-        </div>
-      </div>
-    </>
+      {!isProfilePage && (
+        <>
+          <Header />
+          <div className='min-h-screen transition-colors grid grid-cols-1 md:grid-cols-2 gap-6 p-6'>
+            {/* Left Section */}
+            <div className="flex flex-col gap-6">
+              <AccountProfile darkMode={darkMode} />
+              <PrivacySecurity darkmode={darkMode} />
+              <HelpSection darkMode={darkMode} />
+              <SystemControl darkMode={darkMode} />
+            </div>
+
+            {/* Right Section */}
+            <div className="flex flex-col gap-6">
+              <NotificationSettings
+                darkmode={darkMode}
+                notifications={notifications}
+                setNotifications={setNotifications}
+              />
+              <ThemeDisplay
+                darkMode={darkMode}
+                setDarkMode={setDarkMode}
+                language={language}
+                setLanguage={setLanguage}
+              />
+              <ReportsAnalytics darkMode={darkMode} />
+              <AdminControl darkMode={darkMode} />
+            </div>
+          </div>
+        </>
+      )}
+
+      <Routes>
+        <Route path="profile" element={<Profile />} />
+      </Routes>
+    </div>
   );
 }

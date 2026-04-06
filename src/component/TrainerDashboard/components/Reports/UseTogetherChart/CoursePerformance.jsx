@@ -8,7 +8,7 @@ export default function CoursePerformance() {
   ];
 
   return (
-    <div className="bg-white border rounded-xl p-4 shadow-sm w-full">
+    <div className="bg-white border border-gray-300 rounded-xl p-4 shadow-sm w-full">
       <h3 className="text-sm font-semibold text-gray-700 mb-3">
         Course-wise Performance
       </h3>

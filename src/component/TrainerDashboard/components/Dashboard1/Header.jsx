@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FaSearch, FaBell } from "react-icons/fa";
+import { Settings } from "lucide-react";
 import { useTheme } from "../../context/ThemeContext"; // ✅ adjust path
 
 export default function Header() {
@@ -56,20 +57,30 @@ export default function Header() {
         />
       </div>
 
-      {/* Notification Icon */}
-      <FaBell
-        className={`text-xl cursor-pointer ml-6 ${
-          darkMode ? "text-gray-300" : "text-gray-600"
-        }`}
-      />
+      <div className="items-end justify-center flex gap-10">
+  {/* Notification Icon */}
+  <FaBell
+    className={`text-xl cursor-pointer mb-2 transition-colors duration-300 ${
+      darkMode ? "text-gray-300" : "text-gray-600"
+    }`}
+  />
 
-      {/* User Avatar */}
-       <img
-      src="https://randomuser.me/api/portraits/women/68.jpg"
-      alt="User avatar"
-      className="w-10 h-10 rounded-full -ml-50 cursor-pointer"
-      onClick={() => navigate("/trainer/profile")}
-    />
+  {/* Settings Icon */}
+  <Settings
+    className={`text-xl cursor-pointer mb-2 transition-colors duration-300 ${
+      darkMode ? "text-gray-300" : "text-gray-600"
+    }`}
+    onClick={() => navigate("/trainer/setting")}
+  />
+
+  {/* User Avatar */}
+  <img
+    src="https://randomuser.me/api/portraits/women/68.jpg"
+    alt="User avatar"
+    className="w-10 h-10 rounded-full cursor-pointer"
+    onClick={() => navigate("profile")}
+  />
+</div>
     </div>
   );
 }
