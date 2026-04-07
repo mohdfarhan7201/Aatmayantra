@@ -94,7 +94,7 @@ import TrainerForm from "./component/TrainerForm/TrainerForm";
 import TrainerApp from "./component/TrainerDashboard/TrainerApp";
 
 // manager dashboard
-import ManagerDashboard from "./component/ManagerDashboard/manager";
+import ManagerDashboard from "./component/ManagerDashboard/ManagerApp";
 
 function AppContent() {
   const location = useLocation();
@@ -102,7 +102,7 @@ function AppContent() {
   // ❌ Navbar hide for dashboard routes
   const hideNavbar =
     location.pathname.startsWith("/trainer") ||
-    location.pathname.startsWith("/manager-dashboard");
+    location.pathname.startsWith("/manager");
 
   return (
     <>
@@ -121,7 +121,7 @@ function AppContent() {
         <Route path="/trainer/*" element={<TrainerApp />} />
 
         {/* ✅ Manager Dashboard */}
-        <Route path="/manager-dashboard" element={<ManagerDashboard />} />
+        <Route path="/manager/*" element={<ManagerDashboard />} />
       </Routes>
     </>
   );
