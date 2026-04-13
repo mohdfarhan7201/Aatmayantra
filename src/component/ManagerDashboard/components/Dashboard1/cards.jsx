@@ -10,41 +10,69 @@ export default function StatsCards() {
 
   const cards = [
     {
-      title: "Active Clients",
-      icon: <FaUsers className="text-4xl text-blue-600" />,
-      bg: "bg-green-50",
-      path: "/active-clients",
+      title: "Total Sessions",
+      value: "12",
+      icon: <FaVideo size={38} />,
+      bg: "from-blue-100 to-blue-200",
+      blob: "bg-blue-300",
+      path: "/sessions",
     },
     {
-      title: "Today's Session",
-      icon: <MdEventAvailable className="text-4xl text-blue-600" />,
-      bg: "bg-white",
-      path: "/todays-session",
+      title: "Active Users",
+      value: "112",
+      icon: <FaUsers size={38} />,
+      bg: "from-green-100 to-green-200",
+      blob: "bg-green-300",
+      path: "/active-users",
     },
     {
-      title: "Earning",
-      icon: <GiMoneyStack className="text-4xl text-blue-600" />,
-      bg: "bg-white",
-      path: "/earning",
+      title: "Attendance Rate",
+      value: "95%",
+      icon: <MdEventAvailable size={38} />,
+      bg: "from-purple-100 to-purple-200",
+      blob: "bg-purple-300",
+      path: "/attendance",
     },
     {
-      title: "Live Stream",
-      icon: <FaVideo className="text-4xl text-blue-600" />,
-      bg: "bg-white",
-      path: "/live-stream",
+      title: "Revenue",
+      value: "₹ 10,204.00",
+      icon: <GiMoneyStack size={38} />,
+      bg: "from-red-100 to-red-200",
+      blob: "bg-red-300",
+      path: "/revenue",
     },
   ];
 
   return (
-    <div className="flex items-center justify-between gap-6 mt-6 mb-5">
+    <div className="flex gap-6 mt-6">
       {cards.map((card, index) => (
         <div
           key={index}
           onClick={() => navigate(card.path)}
-          className={`w-56 h-28 cursor-pointer rounded-xl border border-gray-300 shadow-sm flex flex-col justify-center items-center transition hover:shadow-md ${card.bg}`}
+          className={`relative w-64 h-36 p-4 rounded-xl cursor-pointer overflow-hidden shadow-sm hover:shadow-md transition bg-gradient-to-br ${card.bg}`}
         >
-          {card.icon}
-          <p className="mt-2 font-semibold text-gray-700">{card.title}</p>
+          {/* TEXT */}
+          <p className="text-lg font-semibold text-gray-700">
+            {card.title}
+          </p>
+
+          <h2 className="text-2xl font-bold text-gray-900 mt-1 px-2">
+            {card.value}
+          </h2>
+
+          <button className="mt-4 text-xs bg-white px-3 py-1 rounded-full shadow">
+            View details
+          </button>
+
+          {/* 🔥 ELLIPSE BACKGROUND */}
+          <div
+            className={`absolute -bottom-6 -right-6 w-26 h-26 ${card.blob} opacity-40 rounded-full`}
+          ></div>
+
+          {/* ICON */}
+          <div className="absolute bottom-4 right-4 text-gray-800">
+            {card.icon}
+          </div>
         </div>
       ))}
     </div>
