@@ -30,16 +30,16 @@ function Layout() {
       <main className="flex-1 overflow-auto ml-64">
         <Routes>
           <Route index element={<Dashboard />} />
-          {/* <Route path="profile" element={<Profile />} />
-          <Route path="session/*" element={<Sessions />} />
-          <Route path="shedule/*" element={<Shedule/>} />
+          <Route path="profile" element={<Profile />} />
+          {/* <Route path="session/*" element={<Sessions />} />
+          <Route path="shedule/*" element={<Shedule/>} /> */}
           <Route path="attendance/*" element={<Attendance/>} />
-          <Route path="members/*" element={<Members/>} />
+          {/* <Route path="members/*" element={<Members/>} />
           <Route path="chat/*" element={<Chat/>} />
           <Route path="report/*" element={<Reports/>} />
-          <Route path="payment/*" element={<Payment/>} />
+          <Route path="payment/*" element={<Payment/>} /> */}
           <Route path="setting/*" element={<Setting />} />
-          <Route path="logout" element={<Logout />} /> */}
+          <Route path="logout" element={<Logout />} />
 
         </Routes>
       </main>
