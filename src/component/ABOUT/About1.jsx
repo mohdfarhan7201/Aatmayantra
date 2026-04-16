@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import yoga1 from "../../assets/yoga1.svg";
 import yoga2 from "../../assets/yoga2.svg";
-import mobileYoga from "../../assets/mobile responsive.svg"; // mobile-only image
+import mobileYoga from "../../assets/mobile-responsive.svg"; // mobile-only image
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
