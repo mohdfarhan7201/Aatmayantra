@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from "./Header";
-import StatusCard from "./Statuscard";
+import StatusCard from "./StatusCard";
 import Charts from "./UseTogetherChart/UseTogether";
 import MemberReport from "./MemberReport/ReportMember";
 import Profile from "../Profile";

@@ -7,6 +7,9 @@ import UpcomingSession from "./UpcomingSession";
 import RevenueChart from "./RevenueChart";
 import PaymentList from "./PaymentList";
 import ExistingInstructor from "./Existing/ExistingInstructor";
+import Appoinment from "./Appointment";
+import RecentInstructor from "./RecentInstructor";
+
 import StatsCards from "./StatsCards";
 import ActiveStatusChart from "./MostActive";
 import TotalUsersChart from "./EarningChart";
@@ -24,6 +27,8 @@ export default function Dashboard() {
         <RevenueChart/>
 <PaymentList/>
 <ExistingInstructor/>
+<Appoinment/>
+<RecentInstructor/>
 
         {/* <StatsCards />
         <div className="flex flex-col-2 gap-6">
