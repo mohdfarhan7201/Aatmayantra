@@ -1,7 +1,7 @@
 import React from "react";
-import Sidebar from "../Sidebar";
+
 import Header from "./Header";
-import WelcomeBox from "./WelcomeBox";
+
 import Cards from "./cards";
 import UpcomingSession from "./UpcomingSession";
 import RevenueChart from "./RevenueChart";
@@ -18,10 +18,10 @@ import MemberSummary from "./MemberSummary/MemberSummary";
 export default function Dashboard() {
   return (
     <>
-    {/* <Slidebar/> */}
+ 
       <main className="flex-1 p-4 overflow-auto ">
         <Header />
-        {/* <WelcomeBox /> */}
+      
         <Cards/>
         <UpcomingSession/>
         <RevenueChart/>

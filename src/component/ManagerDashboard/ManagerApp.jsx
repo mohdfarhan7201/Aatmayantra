@@ -5,7 +5,7 @@ import Sidebar from "./components/Sidebar";
 import Dashboard from "./components/Dashboard1/Dashboard";
 import Profile from "./components/Profile";
 import Sessions from "./components/Sessions/Session";
-import Shedule from "./components/Shedule/shedule";
+import Appointment from "./components/Appointment/Appointment";
 import Attendance from "./components/Attendance/attendance";
 import Members from "./components/Members/member";
 import Chat from "./components/Chats/chat";
@@ -31,8 +31,8 @@ function Layout() {
         <Routes>
           <Route index element={<Dashboard />} />
           <Route path="profile" element={<Profile />} />
-          {/* <Route path="session/*" element={<Sessions />} />
-          <Route path="shedule/*" element={<Shedule/>} /> */}
+          <Route path="session/*" element={<Sessions />} />
+          <Route path="appointment/*" element={<Appointment/>} />
           <Route path="attendance/*" element={<Attendance/>} />
           {/* <Route path="members/*" element={<Members/>} />
           <Route path="chat/*" element={<Chat/>} />

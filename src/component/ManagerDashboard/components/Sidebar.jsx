@@ -19,8 +19,8 @@ const basePath = "/manager";
 
 const navigationItems = [
   { id: "dashboard", label: "Dashboard", path: "", icon: Home }, // ✅ INDEX
+  { id: "manage-classes", label: "Appointment", path: "appointment", icon: Grid3X3 },
   { id: "session", label: "Session", path: "session", icon: LiaChalkboardTeacherSolid },
-  { id: "manage-classes", label: "Schedule", path: "shedule", icon: Grid3X3 },
   { id: "attendance", label: "Attendance", path: "attendance", icon: GraduationCap },
   { id: "members", label: "Members", path: "members", icon: BsPeopleFill },
   { id: "chat", label: "Chat", path: "chat", icon: MessageSquare },
