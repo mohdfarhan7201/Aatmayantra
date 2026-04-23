@@ -4,7 +4,7 @@ import Home from "./component/HOME/Home";
 import About from "./component/ABOUT/About";
 import Service from "./component/SERVICE/Service";
 import Contact from "./component/CONTACT/Contact";
-import Carrier from "./component/CARRIER/Carrier2";
+import Carrier from "./component/CARRIER/Carrier";
 import Login from "./component/LOGIN/Login";
 import TrainerForm from "./component/TrainerForm/TrainerForm";
 import TrainerApp from "./component/TrainerDashboard/TrainerApp";

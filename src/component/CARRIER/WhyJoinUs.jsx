@@ -1,97 +1,69 @@
-// src/components/MyWork.jsx
 import React from "react";
-import Col1 from '../../assets/col1.jpg';
-import Col2 from '../../assets/col2.jpg';
-import Col3 from '../../assets/col3.jpg';
-import Col4 from '../../assets/col4.jpg';
+import { Briefcase, Users, BarChart3, ShieldCheck } from "lucide-react";
 
 const MyWork = () => {
-  const workItems = [
+  const items = [
     {
-      id: 1,
-      img: Col1,
-      title: "Social Media App",
-      desc: "Connects you to talented people around the world. Download it from play store.",
+      icon: <Briefcase size={18} />,
+      title: "Work-Life Balance",
+      desc: "With over 10 years of experience, our team of experts has mastered the globe.",
     },
     {
-      id: 2,
-      img: Col2,
-      title: "Social Media App",
-      desc: "Connects you to talented people around the world. Download it from play store.",
+      icon: <Users size={18} />,
+      title: "Supportive Team",
+      desc: "With over 10 years of experience, our team of experts has mastered the globe.",
     },
     {
-      id: 3,
-      img: Col3,
-      title: "Social Media App",
-      desc: "Connects you to talented people around the world. Download it from play store.",
+      icon: <BarChart3 size={18} />,
+      title: "Growth & Training",
+      desc: "With over 10 years of experience, our team of experts has mastered the globe.",
     },
     {
-      id: 4,
-      img: Col4,
-      title: "Social Media App",
-      desc: "Connects you to talented people around the world. Download it from play store.",
+      icon: <ShieldCheck size={18} />,
+      title: "Impactful Work",
+      desc: "With over 10 years of experience, our team of experts has mastered the globe.",
     },
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold text-center mb-8">Why Join Us?</h1>
+    <div className="bg-gray-100 py-20 px-20">
+      <h1 className="text-4xl font-semibold text-center mb-16">
+        Why Join Us?
+      </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-        {/* ID 1 - Column 1 */}
-        <div className="relative group overflow-hidden rounded-xl shadow-lg col-span-1">
-          <img
-            src={workItems[0].img}
-            alt={`work${workItems[0].id}`}
-            className="w-full h-72 object-cover transform duration-300 group-hover:scale-110"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white px-4 text-center">
-            <h3 className="text-xl font-semibold mb-2">{workItems[0].title}</h3>
-            <p className="text-sm">{workItems[0].desc}</p>
-          </div>
+      <div className="max-w-7xl mx-auto grid grid-cols-2 gap-y-12 ml-20">
+        
+        {/* TOP ROW */}
+        <div className="flex justify-start">
+          <Card data={items[0]} />
         </div>
 
-        {/* ID 3 - Column 3 */}
-        <div className="relative group overflow-hidden rounded-xl shadow-lg md:col-start-3 col-span-1">
-          <img
-            src={workItems[2].img}
-            alt={`work${workItems[2].id}`}
-            className="w-full h-72 object-cover transform duration-300 group-hover:scale-110"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white px-4 text-center">
-            <h3 className="text-xl font-semibold mb-2">{workItems[2].title}</h3>
-            <p className="text-sm">{workItems[2].desc}</p>
-          </div>
+        <div className="flex justify-center -ml-90">
+          <Card data={items[1]} />
         </div>
 
-     
-
-        {/* ID 2 - Column 2  */}
-        <div className="relative group overflow-hidden rounded-xl shadow-lg md:col-start-2 col-span-1 mt-2">
-          <img
-            src={workItems[1].img}
-            alt={`work${workItems[1].id}`}
-            className="w-full h-72 object-cover transform duration-300 group-hover:scale-110"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white px-4 text-center">
-            <h3 className="text-xl font-semibold mb-2">{workItems[1].title}</h3>
-            <p className="text-sm">{workItems[1].desc}</p>
-          </div>
+        {/* BOTTOM ROW (SHIFTED CENTER) */}
+        <div className="flex justify-center translate-x-20 -mr-20">
+          <Card data={items[2]} />
         </div>
 
-        {/* ID 4 - Column 4  */}
-        <div className="relative group overflow-hidden rounded-xl shadow-lg md:col-start-4 col-span-1 mt-2">
-          <img
-            src={workItems[3].img}
-            alt={`work${workItems[3].id}`}
-            className="w-full h-72 object-cover transform duration-300 group-hover:scale-110"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white px-4 text-center">
-            <h3 className="text-xl font-semibold mb-2">{workItems[3].title}</h3>
-            <p className="text-sm">{workItems[3].desc}</p>
-          </div>
+        <div className="flex justify-end -translate-x-20 ">
+          <Card data={items[3]} />
         </div>
+
       </div>
+    </div>
+  );
+};
+
+const Card = ({ data }) => {
+  return (
+    <div className="w-64 bg-white p-6 rounded-md border shadow-sm text-center">
+      <div className="w-8 h-8 bg-blue-500 text-white flex items-center justify-center rounded mb-3 mx-auto">
+        {data.icon}
+      </div>
+      <h3 className="font-medium text-sm mb-1">{data.title}</h3>
+      <p className="text-xs text-gray-500">{data.desc}</p>
     </div>
   );
 };

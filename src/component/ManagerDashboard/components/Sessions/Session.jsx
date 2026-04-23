@@ -24,29 +24,29 @@ export default function AddManager() {
       {/* ✅ Header hide on profile pages */}
       {!isProfilePage && <Header />}
 
-      <Routes>
+      {/* <Routes> */}
         {/* ✅ /trainer/session */}
-        <Route index element={<Upcoming />} />
-        <Route path="profile" element={<Profile />} />
+        {/* <Route index element={<Upcoming />} /> */}
+        {/* <Route path="profile" element={<Profile />} /> */}
 
         {/* ✅ /trainer/session/uploaded */}
-        <Route path="uploaded">
-          <Route index element={<Upload />} />
-          <Route path="profile" element={<Profile />} />
-        </Route>
+        {/* <Route path="uploaded"> */}
+          {/* <Route index element={<Upload />} /> */}
+          {/* <Route path="profile" element={<Profile />} /> */}
+        {/* </Route> */}
 
         {/* ✅ /trainer/session/add */}
-        <Route path="add">
-          <Route index element={<AddSession />} />
-          <Route path="profile" element={<Profile />} />
-        </Route>
+        {/* <Route path="add"> */}
+          {/* <Route index element={<AddSession />} /> */}
+          {/* <Route path="profile" element={<Profile />} /> */}
+        {/* </Route> */}
 
         {/* ✅ /trainer/session/view/:id */}
-        <Route path="view/:id">
-          <Route index element={<ViewReport />} />
-          <Route path="profile" element={<Profile />} />
-        </Route>
-      </Routes>
+        {/* <Route path="view/:id"> */}
+          {/* <Route index element={<ViewReport />} /> */}
+          {/* <Route path="profile" element={<Profile />} /> */}
+        {/* </Route> */}
+      {/* </Routes> */}
     </div>
   );
 }

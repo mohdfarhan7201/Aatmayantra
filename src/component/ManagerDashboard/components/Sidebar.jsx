@@ -22,10 +22,10 @@ const navigationItems = [
   { id: "manage-classes", label: "Appointment", path: "appointment", icon: Grid3X3 },
   { id: "session", label: "Session", path: "session", icon: LiaChalkboardTeacherSolid },
   { id: "attendance", label: "Attendance", path: "attendance", icon: GraduationCap },
-  { id: "members", label: "Members", path: "members", icon: BsPeopleFill },
-  { id: "chat", label: "Chat", path: "chat", icon: MessageSquare },
-  { id: "report", label: "Report", path: "report", icon: FileText },
+  { id: "members", label: "Instructor", path: "instructor", icon: BsPeopleFill },
+  // { id: "chat", label: "Chat", path: "chat", icon: MessageSquare },
   { id: "payment", label: "Payment", path: "payment", icon: CreditCard },
+  { id: "report", label: "Ticket", path: "ticket", icon: FileText },
   { id: "setting", label: "Settings", path: "setting", icon: Settings },
   { id: "logout", label: "Logout", path: "logout", icon: LogOut },
 ];
